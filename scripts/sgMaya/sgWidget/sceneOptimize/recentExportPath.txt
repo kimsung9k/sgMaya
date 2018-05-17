@@ -1,0 +1,1 @@
+{"abcPath": "fin.abc", "sceneInfoPath": "fin.sceneInfo", "rootPath": "Z:/SW_S3_Pipeline/03_Main-Production/05_Animation/EP305/scene/fin/EP305_S160_Ani_fin"}

@@ -1,0 +1,689 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b0d6edde-f28e-45f0-91be-c270c2f8591c" name="Default" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <splitter split-orientation="horizontal" split-proportion="0.467028">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/sgMaya/__init__.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="323">
+                  <caret line="17" column="17" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="sgRig.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/sgMaya/sgRig.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="58178">
+                  <caret line="3067" selection-start-line="3067" selection-end-line="3067" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="viewport_shader_optimizer.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/sgMaya/sgWidget/viewport_shader_optimizer.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="228">
+                  <caret line="12" column="40" selection-start-line="12" selection-start-column="40" selection-end-line="12" selection-end-column="40" />
+                  <folding>
+                    <element signature="e#0#31#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="sgAnim.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/sgMaya/sgAnim.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="323">
+                  <caret line="36" column="88" lean-forward="true" selection-start-line="36" selection-start-column="88" selection-end-line="36" selection-end-column="88" />
+                  <folding>
+                    <element signature="e#0#45#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="scene_optimize_export.py" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/sgMaya/sgWidget/scene_optimize_export.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="761">
+                  <caret line="619" column="44" lean-forward="true" selection-start-line="619" selection-start-column="44" selection-end-line="619" selection-end-column="44" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/sgMaya/__init__.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="266">
+                  <caret line="14" column="12" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="file_path_editor.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/sgMaya/sgWidget/file_path_editor.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="13661">
+                  <caret line="725" column="90" selection-start-line="725" selection-start-column="90" selection-end-line="725" selection-end-column="90" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="createRenderLayer.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/sgMaya/sgWidget/createRenderLayer.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="4864">
+                  <caret line="262" column="30" selection-start-line="262" selection-start-column="30" selection-end-line="262" selection-end-column="30" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="hairSimulationCreator.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/sgMaya/sgWidget/hairSimulationCreator.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="18525">
+                  <caret line="975" column="39" selection-start-line="975" selection-start-column="39" selection-end-line="975" selection-end-column="39" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="sgOptimize.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/sgMaya/sgOptimize.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="9823">
+                  <caret line="524" column="26" selection-start-line="524" selection-start-column="26" selection-end-line="524" selection-end-column="26" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="imageLoader.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/sgMaya/sgWidget/imageLoader.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="9234">
+                  <caret line="492" column="62" selection-start-line="492" selection-start-column="62" selection-end-line="492" selection-end-column="62" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="sequence_image_connector.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/sgMaya/sgWidget/sequence_image_connector.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="7866">
+                  <caret line="420" column="54" selection-start-line="420" selection-start-column="54" selection-end-line="420" selection-end-column="54" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="foot_connector.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/sgMaya/sgWidget/foot_connector.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="5947">
+                  <caret line="319" selection-start-line="319" selection-end-line="319" />
+                  <folding>
+                    <element signature="e#0#31#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="visibility_connector.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/sgMaya/sgWidget/visibility_connector.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="8873">
+                  <caret line="473" column="44" selection-start-line="473" selection-start-column="44" selection-end-line="473" selection-end-column="44" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="__init__.py" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/sgMaya/sgWidget/furDescriptionMapEditor/__init__.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="380">
+                  <caret line="122" column="59" lean-forward="true" selection-start-line="122" selection-start-column="59" selection-end-line="122" selection-end-column="59" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>secondChildsren</find>
+      <find>def duplicate</find>
+      <find>re.compile</find>
+      <find>def copyRig</find>
+      <find>ContextMenu</find>
+      <find>deleteLa</find>
+      <find>self.close</find>
+      <find>dialog.close()</find>
+      <find>close()</find>
+      <find>def getMobject</find>
+      <find>jsonPath</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>secondChildren</replace>
+      <replace>dialog.deleteLater()</replace>
+    </replaceStrings>
+    <dirStrings>
+      <dir>D:\Github\mayaTools\pingosync\scripts\pingosync</dir>
+    </dirStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/sgMaya/__init__.py" />
+        <option value="$PROJECT_DIR$/sgMaya/sgCmds.py" />
+        <option value="$PROJECT_DIR$/sgMaya/sgRig.py" />
+        <option value="$PROJECT_DIR$/sgMaya/sgWidget/foot_rig_connector.py" />
+        <option value="$PROJECT_DIR$/sgMaya/sgWidget/foot_connector.py" />
+        <option value="$PROJECT_DIR$/sgMaya/sgWidget/visibility_connector.py" />
+        <option value="$PROJECT_DIR$/sgMaya/sgWidget/sequence_image_connector.py" />
+        <option value="$PROJECT_DIR$/sgMaya/sgWidget/file_path_editor.py" />
+        <option value="$PROJECT_DIR$/sgMaya/sgWidget/imageLoader.py" />
+        <option value="$PROJECT_DIR$/sgMaya/sgWidget/createRenderLayer.py" />
+        <option value="$PROJECT_DIR$/sgMaya/sgWidget/hairSimulationCreator.py" />
+        <option value="$PROJECT_DIR$/sgMaya/sgWidget/furDescriptionMapEditor/__init__.py" />
+        <option value="$PROJECT_DIR$/sgMaya/sgWidget/viewport_shader_optimizer.py" />
+        <option value="$PROJECT_DIR$/sgMaya/sgAnim.py" />
+        <option value="$PROJECT_DIR$/sgMaya/sgWidget/scene_optimize_export.py" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-7" />
+    <option name="width" value="1294" />
+    <option name="height" value="1407" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="scripts" type="b2602c69:ProjectViewProjectNode" />
+              <item name="scripts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="scripts" type="b2602c69:ProjectViewProjectNode" />
+              <item name="scripts" type="462c0819:PsiDirectoryNode" />
+              <item name="sgMaya" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="scripts" type="b2602c69:ProjectViewProjectNode" />
+              <item name="scripts" type="462c0819:PsiDirectoryNode" />
+              <item name="sgMaya" type="462c0819:PsiDirectoryNode" />
+              <item name="sgWidget" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="scripts" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b0d6edde-f28e-45f0-91be-c270c2f8591c" name="Default" comment="" />
+      <created>1522658309030</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1522658309030</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="2576" height="1416" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.13515624" />
+      <window_info anchor="bottom" id="TODO" order="10" />
+      <window_info anchor="bottom" id="Event Log" order="0" side_tool="true" />
+      <window_info anchor="bottom" id="Find" order="5" />
+      <window_info anchor="bottom" id="Run" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="1" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Python Console" order="2" />
+      <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Terminal" order="3" />
+      <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
+      <window_info id="Favorites" order="0" side_tool="true" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="4" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/sgMaya/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="14" column="45" selection-start-line="14" selection-start-column="45" selection-end-line="14" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sgMaya/sgWidget/file_path_editor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="13661">
+          <caret line="725" column="90" selection-start-line="725" selection-start-column="90" selection-end-line="725" selection-end-column="90" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sgMaya/sgWidget/createRenderLayer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4864">
+          <caret line="262" column="30" selection-start-line="262" selection-start-column="30" selection-end-line="262" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sgMaya/sgWidget/hairSimulationCreator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18525">
+          <caret line="975" column="39" selection-start-line="975" selection-start-column="39" selection-end-line="975" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sgMaya/sgOptimize.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9823">
+          <caret line="524" column="26" selection-start-line="524" selection-start-column="26" selection-end-line="524" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sgMaya/sgWidget/imageLoader.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9234">
+          <caret line="492" column="62" selection-start-line="492" selection-start-column="62" selection-end-line="492" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sgMaya/sgWidget/sequence_image_connector.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7866">
+          <caret line="420" column="54" selection-start-line="420" selection-start-column="54" selection-end-line="420" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sgMaya/sgWidget/foot_connector.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5928">
+          <caret line="318" selection-start-line="318" selection-end-line="318" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sgMaya/sgWidget/visibility_connector.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8873">
+          <caret line="473" column="44" selection-start-line="473" selection-start-column="44" selection-end-line="473" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sgMaya/sgWidget/furDescriptionMapEditor/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2204">
+          <caret line="119" column="17" selection-start-line="119" selection-start-column="5" selection-end-line="119" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sgMaya/sgRig.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="58064">
+          <caret line="3061" selection-start-line="3061" selection-end-line="3061" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sgMaya/sgWidget/viewport_shader_optimizer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="13357">
+          <caret line="703" selection-start-line="703" selection-end-line="703" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sgMaya/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="14" column="45" selection-start-line="14" selection-start-column="45" selection-end-line="14" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sgMaya/sgWidget/file_path_editor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="13661">
+          <caret line="725" column="90" selection-start-line="725" selection-start-column="90" selection-end-line="725" selection-end-column="90" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sgMaya/sgWidget/createRenderLayer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4864">
+          <caret line="262" column="30" selection-start-line="262" selection-start-column="30" selection-end-line="262" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sgMaya/sgWidget/hairSimulationCreator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18525">
+          <caret line="975" column="39" selection-start-line="975" selection-start-column="39" selection-end-line="975" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sgMaya/sgOptimize.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9823">
+          <caret line="524" column="26" selection-start-line="524" selection-start-column="26" selection-end-line="524" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sgMaya/sgWidget/imageLoader.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9234">
+          <caret line="492" column="62" selection-start-line="492" selection-start-column="62" selection-end-line="492" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sgMaya/sgWidget/sequence_image_connector.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7866">
+          <caret line="420" column="54" selection-start-line="420" selection-start-column="54" selection-end-line="420" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sgMaya/sgWidget/foot_connector.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5225">
+          <caret line="275" column="35" selection-start-line="275" selection-start-column="35" selection-end-line="275" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sgMaya/sgWidget/visibility_connector.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8873">
+          <caret line="473" column="44" selection-start-line="473" selection-start-column="44" selection-end-line="473" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sgMaya/sgWidget/furDescriptionMapEditor/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2204">
+          <caret line="119" column="17" selection-start-line="119" selection-start-column="5" selection-end-line="119" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sgMaya/sgRig.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="58159">
+          <caret line="3061" selection-start-line="3061" selection-end-line="3061" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sgMaya/sgWidget/viewport_shader_optimizer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="13243">
+          <caret line="703" lean-forward="true" selection-start-line="703" selection-end-line="703" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sgMaya/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="14" column="45" selection-start-line="14" selection-start-column="45" selection-end-line="14" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sgMaya/sgWidget/file_path_editor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="13661">
+          <caret line="725" column="90" selection-start-line="725" selection-start-column="90" selection-end-line="725" selection-end-column="90" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sgMaya/sgWidget/createRenderLayer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4864">
+          <caret line="262" column="30" selection-start-line="262" selection-start-column="30" selection-end-line="262" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sgMaya/sgWidget/hairSimulationCreator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18525">
+          <caret line="975" column="39" selection-start-line="975" selection-start-column="39" selection-end-line="975" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sgMaya/sgOptimize.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9823">
+          <caret line="524" column="26" selection-start-line="524" selection-start-column="26" selection-end-line="524" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sgMaya/sgWidget/imageLoader.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9234">
+          <caret line="492" column="62" selection-start-line="492" selection-start-column="62" selection-end-line="492" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sgMaya/sgWidget/sequence_image_connector.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7866">
+          <caret line="420" column="54" selection-start-line="420" selection-start-column="54" selection-end-line="420" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sgMaya/sgWidget/foot_connector.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5111">
+          <caret line="275" column="35" selection-start-line="275" selection-start-column="35" selection-end-line="275" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sgMaya/sgWidget/visibility_connector.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8873">
+          <caret line="473" column="44" selection-start-line="473" selection-start-column="44" selection-end-line="473" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sgMaya/sgWidget/furDescriptionMapEditor/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2147">
+          <caret line="116" column="44" lean-forward="true" selection-start-line="116" selection-start-column="44" selection-end-line="116" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sgMaya/sgCmds.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="16" column="45" lean-forward="true" selection-start-line="16" selection-start-column="45" selection-end-line="16" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sgMaya/sgBase.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-532">
+          <caret column="27" selection-start-column="27" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sgMaya/sgRig.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="58178">
+          <caret line="3067" selection-start-line="3067" selection-end-line="3067" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sgMaya/sgWidget/foot_rig_connector.py" />
+    <entry file="file://$PROJECT_DIR$/sgMaya/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="17" column="17" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sgMaya/sgWidget/foot_connector.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5947">
+          <caret line="319" selection-start-line="319" selection-end-line="319" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sgMaya/sgWidget/visibility_connector.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8873">
+          <caret line="473" column="44" selection-start-line="473" selection-start-column="44" selection-end-line="473" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sgMaya/sgWidget/sequence_image_connector.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7866">
+          <caret line="420" column="54" selection-start-line="420" selection-start-column="54" selection-end-line="420" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sgMaya/sgWidget/file_path_editor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="13661">
+          <caret line="725" column="90" selection-start-line="725" selection-start-column="90" selection-end-line="725" selection-end-column="90" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sgMaya/sgOptimize.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9823">
+          <caret line="524" column="26" selection-start-line="524" selection-start-column="26" selection-end-line="524" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sgMaya/sgWidget/imageLoader.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9234">
+          <caret line="492" column="62" selection-start-line="492" selection-start-column="62" selection-end-line="492" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sgMaya/sgWidget/createRenderLayer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4864">
+          <caret line="262" column="30" selection-start-line="262" selection-start-column="30" selection-end-line="262" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sgMaya/sgWidget/hairSimulationCreator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18525">
+          <caret line="975" column="39" selection-start-line="975" selection-start-column="39" selection-end-line="975" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sgMaya/sgWidget/viewport_shader_optimizer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="12" column="40" selection-start-line="12" selection-start-column="40" selection-end-line="12" selection-end-column="40" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sgMaya/sgWidget/furDescriptionMapEditor/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="122" column="59" lean-forward="true" selection-start-line="122" selection-start-column="59" selection-end-line="122" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sgMaya/sgAnim.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="36" column="88" lean-forward="true" selection-start-line="36" selection-start-column="88" selection-end-line="36" selection-end-column="88" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sgMaya/sgWidget/scene_optimize_export.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="761">
+          <caret line="619" column="44" lean-forward="true" selection-start-line="619" selection-start-column="44" selection-end-line="619" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

@@ -1,0 +1,512 @@
+from maya import cmds, OpenMaya
+import maya.OpenMayaUI
+import pymel.core
+import copy
+import os, json
+
+from maya import cmds
+
+if int(cmds.about(v=1)) < 2017:
+    from PySide import QtGui, QtCore
+    import shiboken
+    from PySide.QtGui import QListWidgetItem, QDialog, QListWidget, QMainWindow, QWidget, QColor, QLabel, \
+        QVBoxLayout, QHBoxLayout, QLineEdit, QPushButton, QAbstractItemView, QMenu, QCursor, QMessageBox, QBrush, \
+        QSplitter, \
+        QScrollArea, QSizePolicy, QTextEdit, QApplication, QFileDialog, QCheckBox, QDoubleValidator, QSlider, \
+        QIntValidator, \
+        QImage, QPixmap, QTransform, QPaintEvent, QTabWidget, QFrame, QTreeWidgetItem, QTreeWidget, QComboBox, \
+        QGroupBox, QAction, \
+        QFont, QGridLayout
+else:
+    from PySide2 import QtGui, QtCore, QtWidgets
+    import shiboken2 as shiboken
+    from PySide2.QtWidgets import QListWidgetItem, QDialog, QListWidget, QMainWindow, QWidget, QVBoxLayout, QLabel, \
+        QVBoxLayout, QHBoxLayout, QLineEdit, QPushButton, QAbstractItemView, QMenu, QMessageBox, QSplitter, \
+        QScrollArea, QSizePolicy, QTextEdit, QApplication, QFileDialog, QCheckBox, QSlider, \
+        QTabWidget, QFrame, QTreeWidgetItem, QTreeWidget, QComboBox, QGroupBox, QAction, QGridLayout
+
+    from PySide2.QtGui import QColor, QCursor, QBrush, QDoubleValidator, QIntValidator, QImage, QPixmap, QTransform, \
+        QPaintEvent, QFont
+
+
+
+
+path_uiInfo_basedir = cmds.about(pd=1) + "/pingo/foot_connector"
+
+class Cmds_file_control(object):
+
+    def __init__(self, *args, **kwargs):
+
+        print "init cmds_file"
+        pass
+
+    def makeFolder(self, pathName):
+        if os.path.exists(pathName): return None
+        os.makedirs(pathName)
+        return pathName
+
+    def makeFile(self, filePath):
+        if os.path.exists(filePath): return None
+        filePath = filePath.replace("\\", "/")
+        splits = filePath.split('/')
+        folder = '/'.join(splits[:-1])
+        self.makeFolder(folder)
+        f = open(filePath, "w")
+        json.dump({}, f)
+        f.close()
+
+    def writeData(self, data, filePath):
+        self.makeFile(filePath)
+        f = open(filePath, 'w')
+        json.dump(data, f, indent=2)
+        f.close()
+
+    def readData(self, filePath):
+        self.makeFile(filePath)
+
+        f = open(filePath, 'r')
+        data = {}
+        try:
+            data = json.load(f)
+        except:
+            pass
+        f.close()
+
+        return data
+
+    def save_shapeInfo(self, path):
+
+        data = self.readData(path)
+        data['x'] = self.x()
+        data['y'] = self.y()
+        data['width'] = self.width()
+        data['height'] = self.height()
+        self.writeData(data, path)
+
+    def load_shapeInfo(self, path):
+
+        data = self.readData(path)
+        try:
+            x = data['x']
+            y = data['y']
+            width = data['width']
+            height = data['height']
+        except:
+            return
+        self.move(x, y)
+        self.resize(width, height)
+
+
+    def save_lineEdit_text(self, lineEdit, path ):
+
+        data = self.readData( path )
+        data['lineEdit'] = lineEdit.text()
+        self.writeData( data, path )
+
+
+    def load_lineEdit_text(self, lineEdit, path ):
+
+        data = self.readData( path )
+        if data.has_key( 'lineEdit' ):
+            lineEdit.setText( data['lineEdit'] )
+
+
+    def save_comboBox(self, comboBox, path ):
+
+        data = self.readData( path )
+        data[ 'selectedItem' ] = comboBox.currentText()
+        self.writeData( data, path )
+
+
+    def load_comboBox(self, comboBox, path ):
+
+        data = self.readData( path )
+        if data.has_key( 'selectedItem' ):
+            itemText = data['selectedItem' ]
+        else:
+            return
+        for i in range( comboBox.count() ):
+            if itemText == comboBox.itemText( i ):
+                comboBox.setCurrentIndex( i )
+                break
+
+
+
+
+class Cmds_main:
+
+    @staticmethod
+    def get_csv_form_google_spreadsheets(link_attributeList, targetPath):
+        import re, urllib, urllib2, os, ssl
+        p = re.compile('/d/.+/')
+        m = p.search(link_attributeList)
+        id_sheet = m.group()[3:-1]
+        dirPath = os.path.dirname(targetPath)
+        if not os.path.exists(dirPath): os.makedirs(dirPath)
+        link_donwload_attributeList = 'https://docs.google.com/spreadsheets/d/%s/export?format=csv' % id_sheet
+        try:
+            context = ssl._create_unverified_context()
+            response = urllib2.urlopen(link_donwload_attributeList,
+                                       context=context)  # How should i pass authorization details here?
+            data = response.read()
+            f = open(targetPath, 'w')
+            f.write(data)
+            f.close()
+        except:
+            testfile = urllib.URLopener()
+            testfile.retrieve(link_donwload_attributeList, targetPath)
+
+    @staticmethod
+    def get_dictdata_from_csvPath( csvPath ):
+
+        csvData = []
+        import csv
+        f = open(csvPath, 'r')
+        rdr = csv.reader(f)
+        for line in rdr:
+            csvData.append(line)
+        f.close()
+
+        dictData = {}
+        for i in range(1, len(csvData)):
+            name_shader = csvData[i][0]
+            dictData[name_shader] = {}
+            for j in range(1, len(csvData[i])):
+                type_of_attr = csvData[0][j]
+                dictData[name_shader][type_of_attr] = csvData[i][j]
+        return dictData
+
+    @staticmethod
+    def addAttr(target, **options):
+
+        items = options.items()
+        attrName = ''
+        channelBox = False
+        keyable = False
+        for key, value in items:
+            if key in ['ln', 'longName']:
+                attrName = value
+            elif key in ['cb', 'channelBox']:
+                channelBox = True
+                options.pop(key)
+            elif key in ['k', 'keyable']:
+                keyable = True
+                options.pop(key)
+
+        if pymel.core.attributeQuery(attrName, node=target, ex=1): return None
+
+        pymel.core.addAttr(target, **options)
+        if channelBox:
+            pymel.core.setAttr(target + '.' + attrName, e=1, cb=1)
+        elif keyable:
+            pymel.core.setAttr(target + '.' + attrName, e=1, k=1)
+
+
+
+
+class Widget_Controller( QWidget, Cmds_file_control ):
+
+    path_lineEdit_info = path_uiInfo_basedir + "/Widget_Controller/lineEdit.json"
+
+    def __init__(self, *args, **kwargs ):
+
+        super( Widget_Controller, self ).__init__( *args, **kwargs )
+        self.installEventFilter( self )
+        mainLayout = QHBoxLayout( self ); mainLayout.setContentsMargins( 0,0,0,0 )
+
+        label = QLabel( "Controller : " )
+        lineEdit = QLineEdit()
+        button = QPushButton( "Load" )
+        mainLayout.addWidget( label )
+        mainLayout.addWidget( lineEdit )
+        mainLayout.addWidget( button )
+
+        button.clicked.connect( self.cmd_load )
+        self.lineEdit = lineEdit
+        super(Widget_Controller, self).load_lineEdit_text(self.lineEdit, Widget_Controller.path_lineEdit_info)
+
+    def cmd_load(self):
+
+        sels = pymel.core.ls( sl=1 )
+        self.lineEdit.setText( sels[0].name() )
+        super( Widget_Controller, self ).save_lineEdit_text( self.lineEdit, Widget_Controller.path_lineEdit_info )
+
+
+
+
+class Widget_connectionElement( QTreeWidgetItem, Cmds_file_control ):
+
+    def __init__(self, *args, **kwargs ):
+
+        super(Widget_connectionElement, self).__init__(*args, **kwargs)
+        self.setFlags( self.flags() | QtCore.Qt.ItemIsEditable | QtCore.Qt.ItemIsDragEnabled | QtCore.Qt.ItemIsDropEnabled )
+
+        lineEdit_attrName = QLineEdit()
+
+        w_targetObject = QWidget( self.treeWidget() )
+        lay_targetObject = QHBoxLayout( w_targetObject )
+        lay_targetObject.setContentsMargins( 0,0,0,0 ); lay_targetObject.setSpacing( 0 )
+        lineEdit_targetObject = QLineEdit()
+        button_targetObject = QPushButton( "Load" )
+        lay_targetObject.addWidget( lineEdit_targetObject )
+        lay_targetObject.addWidget( button_targetObject )
+
+        comboBox_targetAttr = QComboBox( self.treeWidget() )
+        comboBox_targetAttr.addItem("rotateX")
+        comboBox_targetAttr.addItem("rotateY")
+        comboBox_targetAttr.addItem("rotateZ")
+        comboBox_targetAttr.addItem("rotateX(+)")
+        comboBox_targetAttr.addItem("rotateY(+)")
+        comboBox_targetAttr.addItem("rotateZ(+)")
+        comboBox_targetAttr.addItem("rotateX(-)")
+        comboBox_targetAttr.addItem("rotateY(-)")
+        comboBox_targetAttr.addItem("rotateZ(-)")
+        self.comboBox = comboBox_targetAttr
+        self.lineEdit_targetObject = lineEdit_targetObject
+        self.lineEdit_attrName = lineEdit_attrName
+
+        self.treeWidget().setItemWidget( self, 0, lineEdit_attrName )
+        self.treeWidget().setItemWidget( self, 1, w_targetObject )
+        self.treeWidget().setItemWidget( self, 2, comboBox_targetAttr )
+        button_targetObject.clicked.connect( self.loadTargetObject )
+        comboBox_targetAttr.currentIndexChanged.connect( self.treeWidget().parentWidget().writeData )
+
+
+    def loadTargetObject(self):
+        sels = pymel.core.ls( sl=1 )
+        if not sels: return None
+        self.lineEdit_targetObject.setText( sels[0].name() )
+        self.treeWidget().parentWidget().writeData()
+
+    def setAttributeName(self, attrName ):
+        self.lineEdit_attrName.setText( attrName )
+
+    def setTargetObject(self, targetObject ):
+        self.lineEdit_targetObject.setText( targetObject )
+
+    def setComboBoxIndex(self, index ):
+        self.comboBox.setCurrentIndex( index )
+
+    def getAttributeName(self):
+        return self.lineEdit_attrName.text()
+
+    def getTargetObject(self ):
+        try:text = self.lineEdit_targetObject.text()
+        except:text = ""
+        return text
+
+    def getComboBoxIndex(self):
+        try: currentIndex = self.comboBox.currentIndex()
+        except:currentIndex = 0
+        return currentIndex
+
+
+
+
+
+
+class Widget_connectionList( QGroupBox, Cmds_file_control ):
+
+    path_uiInfo = path_uiInfo_basedir + "/Widget_connectionList/uiInfo.json"
+
+    def __init__( self, *args, **kwargs ):
+
+        super( Widget_connectionList, self ).__init__(*args, **kwargs)
+        self.installEventFilter( self )
+        mainLayout = QVBoxLayout( self ); mainLayout.setContentsMargins(5, 5, 5, 5); mainLayout.setSpacing(0)
+
+        treeWidget = QTreeWidget()
+        treeWidget.setColumnCount(3)
+        headerItem = treeWidget.headerItem()
+        headerItem.setText(0, "Attribute")
+        headerItem.setText(1, "Target Node")
+        headerItem.setText(2, "Target Attr")
+        treeWidget.setRootIsDecorated(False)
+        self.treeWidget = treeWidget
+
+        treeWidget.setStyleSheet("QTreeWidget::item { border-bottom: 1px solid gray; padding:1px}\
+                                         QTreeWidget{ font-size:13px;}")
+        treeWidget.header().setStyleSheet("font-size:12px;")
+
+        w_buttons = QWidget()
+        lay_buttons = QHBoxLayout(w_buttons); lay_buttons.setContentsMargins( 0,0,0,0 ); lay_buttons.setSpacing( 5 )
+        button_add = QPushButton("Add Line")
+        button_remove = QPushButton("Remove Line")
+        lay_buttons.addWidget( button_add )
+        lay_buttons.addWidget( button_remove )
+
+        mainLayout.addWidget( treeWidget )
+        mainLayout.addWidget( w_buttons )
+        button_add.clicked.connect(self.cmd_addLine)
+        button_remove.clicked.connect(self.cmd_removeLine)
+
+        treeWidget.setContextMenuPolicy( QtCore.Qt.CustomContextMenu )
+        QtCore.QObject.connect(treeWidget, QtCore.SIGNAL('customContextMenuRequested(QPoint)'),
+                               self.loadContextMenu)
+        self.treeWidget = treeWidget
+        self.readData()
+
+
+    def writeData(self, *args ):
+
+        data = {}
+        for i in range( self.treeWidget.topLevelItemCount() ):
+            item = self.treeWidget.topLevelItem( i )
+            attrName = item.getAttributeName()
+            targetObjectName = item.getTargetObject()
+            comboBoxIndex = item.getComboBoxIndex()
+            data[i] = [attrName, targetObjectName, comboBoxIndex]
+        super( Widget_connectionList, self ).writeData( data, Widget_connectionList.path_uiInfo )
+
+
+    def readData(self, *args):
+
+        data = super( Widget_connectionList, self ).readData( Widget_connectionList.path_uiInfo )
+        if not type( data ) == dict: return
+        self.treeWidget.clear()
+        keys = data.keys()
+        keys.sort()
+        for key in keys:
+            try:attrName, nodeName, selIndex = data[key]
+            except:return
+            widgetItem = Widget_connectionElement( self.treeWidget )
+            widgetItem.setAttributeName( attrName )
+            widgetItem.setTargetObject( nodeName )
+            widgetItem.setComboBoxIndex( selIndex )
+
+            print attrName, nodeName, selIndex
+
+
+    def loadContextMenu(self):
+
+        def cmd_loadSelected():
+            selObjects = pymel.core.ls( sl=1 )
+            if not selObjects: return
+            cuItem = self.treeWidget.currentItem()
+            cuItem.setText( 1, selObjects[0].name() )
+
+        menu = QMenu( self.treeWidget )
+        menu.addAction( "Load Object", cmd_loadSelected )
+        pos = QCursor.pos()
+        point = QtCore.QPoint(pos.x() + 10, pos.y())
+        menu.exec_( point )
+
+
+    def cmd_addLine(self):
+        widgetItem = Widget_connectionElement( self.treeWidget )
+        return widgetItem
+
+
+
+    def cmd_removeLine(self):
+        targetIndex = self.treeWidget.topLevelItemCount()-1
+        if targetIndex < 0: return
+        self.treeWidget.takeTopLevelItem( targetIndex )
+        self.writeData()
+
+
+    def eventFilter(self, *args, **kwargs ):
+        event = args[1]
+        if event.type() in [ QtCore.QEvent.Resize, QtCore.QEvent.Show ]:
+            for i in range( 2 ):
+                self.treeWidget.setColumnWidth(i, self.treeWidget.width() * 0.33333)
+
+
+
+class Window(QDialog, Cmds_file_control ):
+
+    mayaWin = shiboken.wrapInstance(long(maya.OpenMayaUI.MQtUtil.mainWindow()), QWidget)
+    objectName = "sg_pingo_foot_connector"
+    title = "PINGO - Foot Connector"
+    defaultWidth = 400
+    defaultHeight = 400
+    path_uiInfo = path_uiInfo_basedir + "/uiInfo.json"
+
+    def __init__(self, *args, **kwrgs):
+
+        existing_widgets = Window.mayaWin.findChildren(QDialog, Window.objectName)
+        if existing_widgets: map( lambda x: x.deleteLater(), existing_widgets )
+
+        super(Window, self).__init__(*args, **kwrgs)
+        self.installEventFilter( self )
+        self.setObjectName( Window.objectName )
+        self.setWindowTitle( Window.title )
+
+        mainLayout = QVBoxLayout( self )
+        w_controller = Widget_Controller()
+        w_connectionList = Widget_connectionList( )
+        button = QPushButton( "Connect" )
+
+        mainLayout.addWidget( w_controller )
+        mainLayout.addWidget( w_connectionList )
+        mainLayout.addWidget( button )
+
+        self.resize( Window.defaultWidth, Window.defaultHeight )
+        self.load_shapeInfo( Window.path_uiInfo )
+
+        self.w_controller = w_controller
+        self.w_connectionList = w_connectionList
+
+        button.clicked.connect( self.cmd_connect )
+
+
+    def cmd_connect(self):
+
+        self.w_connectionList.writeData()
+
+        controller = self.w_controller.lineEdit.text()
+        Cmds_main.addAttr( controller, ln="____", at='enum', en="Options:", cb=1 )
+
+        treeWidget = self.w_connectionList.treeWidget
+
+        cmds.undoInfo( ock=1 )
+        for i in range( treeWidget.topLevelItemCount()):
+            item = treeWidget.topLevelItem(i)
+            attrName = item.getAttributeName()
+            targetObjectName = item.getTargetObject()
+            comboBoxIndex = item.getComboBoxIndex()
+
+            Cmds_main.addAttr( controller, ln= attrName, k=1 )
+            div, mod = divmod( comboBoxIndex, 3 )
+
+            axisList = [ 'X', 'Y', 'Z' ]
+            sourceAttr = controller + "." + attrName
+            targetAttr = targetObjectName + ".rotate" + axisList[ mod ]
+            if div == 1:
+                conditionNode = pymel.core.createNode( 'condition' )
+                conditionNode.op.set( 2 )
+                conditionNode.secondTerm.set( 0 )
+                conditionNode.colorIfFalseR.set( 0 )
+                pymel.core.connectAttr( sourceAttr, conditionNode.firstTerm )
+                pymel.core.connectAttr( sourceAttr, conditionNode.colorIfTrueR )
+                pymel.core.connectAttr( conditionNode.outColorR, targetAttr , f=1 )
+            elif div == 2:
+                conditionNode = pymel.core.createNode('condition')
+                conditionNode.op.set(5)
+                conditionNode.secondTerm.set(0)
+                conditionNode.colorIfFalseR.set(0)
+                pymel.core.connectAttr(sourceAttr, conditionNode.firstTerm)
+                pymel.core.connectAttr(sourceAttr, conditionNode.colorIfTrueR)
+                pymel.core.connectAttr(conditionNode.outColorR, targetAttr, f=1)
+            else:
+                print sourceAttr, targetAttr
+                if not pymel.core.isConnected( sourceAttr, targetAttr ):
+                    pymel.core.connectAttr( sourceAttr, targetAttr , f=1 )
+        cmds.undoInfo(cck=1)
+
+
+    def eventFilter(self, *args, **kwargs ):
+        event = args[1]
+        if event.type() in [ QtCore.QEvent.Resize, QtCore.QEvent.Move ]:
+            try:self.save_shapeInfo( Window.path_uiInfo )
+            except:pass
+
+
+
+def show():
+    try: cmds.deleteUI( Window.objectName, wnd=1 )
+    except:pass
+    Window( Window.mayaWin ).show()
+
+if __name__ == '__main__':
+    show()
